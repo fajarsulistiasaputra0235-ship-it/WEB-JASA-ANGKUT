@@ -14,4 +14,4 @@ Platform web responsif yang dirancang untuk mendigitalisasi layanan operasional 
 
 ## 🌐 Live Demo
 Akses website secara langsung melalui tautan berikut:
-👉 [https://fajarsulistia0235-ship-it.github.io/jasa-angkut-jkt/](https://fajarsulistia0235-ship-it.github.io/jasa-angkut-jkt/)
+👉 https://fajarsulistiasaputra0235-ship-it.github.io/jasa-angkut-jkt/

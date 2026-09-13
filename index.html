@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jasa Angkut Puing, Pasir & Sampah Bangunan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- PRELOADER -->
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
+
+    <header class="fade-in">
+      <h1>🚚 Jasa Angkut Jakarta</h1>
+    </header>
+
+    <main>
+      <section id="hero" class="fade-in">
+        <h2>Jasa Angkut Puing, Pasir & Sampah Proyek</h2>
+        <p>
+          Melayani jasa angkut puing, pengiriman pasir, dan pembersihan sampah
+          proyek di wilayah Jakarta. Armada dikemudikan langsung oleh pemilik
+          tanpa perantara, menjamin harga bersahabat dan layanan cepat tanggap.
+        </p>
+        <button id="btnScrollToForm">Pesan Sekarang</button>
+      </section>
+
+      <section id="layanan" class="fade-in">
+        <div class="card-layanan">Puing</div>
+        <div class="card-layanan">Pasir</div>
+        <div class="card-layanan">Sampah Bangunan</div>
+      </section>
+
+      <!-- SECTION GALERI BARU -->
+      <!-- SECTION GALERI -->
+      <section id="galeri" class="fade-in">
+        <h3>Galeri Armada & Kerja</h3>
+        <div class="grid-galeri">
+          <div class="item-galeri">
+            <img src="/img/armada.jpeg" alt="ARMADA" class="foto-galeri" />
+            <p class="teks-galeri">ARMADA</p>
+          </div>
+
+          <div class="item-galeri">
+            <img src="/img/before.jpeg" alt="BEFORE" class="foto-galeri" />
+            <p class="teks-galeri">BEFORE</p>
+          </div>
+
+          <div class="item-galeri">
+            <img src="/img/after .jpeg" alt="AFTER" class="foto-galeri" />
+            <p class="teks-galeri">AFTER</p>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION MARKETING / KEUNGGULAN (VALUE PROPOSITION) -->
+      <section id="keunggulan" class="fade-in">
+        <h3>Kenapa Harus Memilih Jasa Kami?</h3>
+        <div class="grid-keunggulan">
+          <div class="card-keunggulan">
+            <div class="ikon-unggul">🤝</div>
+            <h4>Tanpa Perantara</h4>
+            <p>
+              Armada dikemudikan langsung oleh pemilik. Harga dijamin lebih
+              murah dan negosiasi langsung tanpa calo.
+            </p>
+          </div>
+
+          <div class="card-keunggulan">
+            <div class="ikon-unggul">⚡</div>
+            <h4>Respon Cepat Tanggap</h4>
+            <p>
+              Pesan hari ini, armada langsung siap meluncur ke lokasi proyek
+              Anda di wilayah Jakarta.
+            </p>
+          </div>
+
+          <div class="card-keunggulan">
+            <div class="ikon-unggul">✨</div>
+            <h4>Hasil Kerja Bersih & Tuntas</h4>
+            <p>
+              Kami tidak cuma mengangkut, tapi memastikan lokasi proyek atau
+              halaman rumah Anda kembali bersih.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontak" class="fade-in">
+        <h3>Pesan Jasa Sekarang</h3>
+        <label>Pilih Layanan</label>
+        <select id="pilihanLayanan" title="Pilih Layanan">
+          <option value="Angkut Puing">Angkut Puing</option>
+          <option value="Kirim Pasir">Kirim Pasir</option>
+          <option value="Sampah Proyek">Sampah Proyek</option>
+        </select>
+
+        <label>Lokasi / Kecamatan</label>
+        <input
+          type="text"
+          id="inputLokasi"
+          placeholder="Contoh: Kebayoran Baru, Jakarta Selatan"
+        />
+        <small id="infoLokasi"></small>
+
+        <button id="btnKirim">Kirim Ke WhatsApp</button>
+      </section>
+
+      <!-- SECTION FAQ PROFESIONAL & MARKETING-FRIENDLY -->
+      <section id="faq" class="fade-in">
+        <h3>Pertanyaan Sering Diajukan (FAQ)</h3>
+
+        <div class="faq-item">
+          <button class="faq-tanya">
+            Apakah harga sudah termasuk jasa kuli muat?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-jawab">
+            <p>
+              Tentu bisa diatur fleksibel sesuai kebutuhan Kakak! Kami siap
+              sediakan tenaga tambahan (kuli muat) jika diperlukan, atau cukup
+              sewa armadanya saja. Yuk, diskusikan detailnya via WhatsApp agar
+              kami berikan penawaran harga terbaik!
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-tanya">
+            Bisa pesan armada untuk malam hari atau mendadak?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-jawab">
+            <p>
+              Jam operasional resmi kami setiap hari pukul 07.00 - 18.00 WIB.
+              Namun, untuk kebutuhan mendadak atau *booking* khusus di luar jam
+              tersebut, silakan langsung hubungi kami via WhatsApp ya Kak, akan
+              kami usahakan solusinya!
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-tanya">
+            Wilayah mana saja yang di-cover oleh layanan ini?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-jawab">
+            <p>
+              Kami melayani seluruh wilayah Jakarta dan sekitarnya tanpa
+              perantara. Cukup infokan lokasi proyek Kakak melalui form di atas
+              atau chat WhatsApp, dan armada langsung siap meluncur ke lokasi!
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-tanya">
+            Bagaimana sistem pembayaran jasanya? <span class="icon">+</span>
+          </button>
+          <div class="faq-jawab">
+            <p>
+              Sistem pembayarannya aman dan fleksibel. Bisa diselesaikan setelah
+              muatan diangkut atau sesuai kesepakatan awal via WhatsApp demi
+              kenyamanan bersama.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="fade-in">
+      <div class="footer-content">
+        <p>📞 Telp/WhatsApp: <strong>0815-7304-4356</strong></p>
+        <p>✉️ Email: <strong>jasa.angkutpuing20@gmail.com</strong></p>
+        <p>📸 Instagram: <strong>@jasaangkut.jakarta</strong></p>
+        <p class="copy">
+          &copy; 2026 Jasa Angkut Puing & Sampah Proyek. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- FLOATING WA BUTTON -->
+    <a
+      href="https://wa.me/6281573044356"
+      class="floating-wa"
+      target="_blank"
+      rel="noopener"
+      title="Chat WhatsApp"
+      >💬</a
+    >
+
+    <!-- MODAL LIGHTBOX UNTUK GALERI -->
+    <div id="modalLightbox" class="modal">
+      <span class="close-modal">&times;</span>
+      <img
+        class="modal-content"
+        id="gambarMembesar"
+        alt="Foto Armada Membesar"
+      />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

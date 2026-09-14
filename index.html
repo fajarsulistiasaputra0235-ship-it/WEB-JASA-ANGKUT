@@ -36,15 +36,20 @@
 
       <section id="layanan" class="fade-in">
         <div class="card-layanan">Puing</div>
-        <div class="card-layanan">Pasir</div>
-        <div class="card-layanan">Sampah Bangunan</div>
+        <div class="card-layanan">Sampah Proyek</div>
+        <div class="card-layanan">Tanah</div>
       </section>
 
       <!-- SECTION GALERI BARU -->
       <!-- SECTION GALERI -->
+      <!-- SECTION GALERI -->
+      <!-- SECTION GALERI -->
       <section id="galeri" class="fade-in">
         <h3>Galeri Armada & Kerja</h3>
+
+        <!-- Semua Foto (Utama + Tambahan) Masuk ke Satu Grid yang Sama -->
         <div class="grid-galeri">
+          <!-- 3 Foto Utama -->
           <div class="item-galeri">
             <img src="img/armada.jpeg" alt="ARMADA" class="foto-galeri" />
             <p class="teks-galeri">ARMADA</p>
@@ -59,6 +64,50 @@
             <img src="img/after.jpeg" alt="AFTER" class="foto-galeri" />
             <p class="teks-galeri">AFTER</p>
           </div>
+
+          <!-- Foto Tambahan (Awalnya Disembunyikan pakai kelas khusus) -->
+          <div class="item-galeri galeri-hidden" style="display: none">
+            <img src="img/pool.jpeg" alt="Pool Armada" class="foto-galeri" />
+            <p class="teks-galeri">Pool & Garasi Truk</p>
+          </div>
+          <div class="item-galeri galeri-hidden" style="display: none">
+            <img
+              src="img/puing.jpeg"
+              alt="Testimoni Puing"
+              class="foto-galeri"
+            />
+            <p class="teks-galeri">Proses Puing</p>
+          </div>
+          <div class="item-galeri galeri-hidden" style="display: none">
+            <img
+              src="img/tanah.jpeg"
+              alt="Testimoni tanah"
+              class="foto-galeri"
+            />
+            <p class="teks-galeri">Pengiriman tanah</p>
+          </div>
+          <!-- Nanti kalau mau tambah foto ke-4, ke-5, dst., tinggal copy blok <div class="item-galeri galeri-hidden" style="display: none;"> di sini -->
+        </div>
+
+        <!-- Tombol See More -->
+        <div style="text-align: center; margin-top: 25px">
+          <button
+            id="btn-see-more"
+            onclick="toggleGaleri()"
+            style="
+              background-color: #22c55e;
+              color: #fff;
+              border: none;
+              padding: 10px 24px;
+              border-radius: 6px;
+              font-weight: bold;
+              cursor: pointer;
+              font-size: 14px;
+              transition: background 0.3s;
+            "
+          >
+            See More Photos
+          </button>
         </div>
       </section>
       <!-- SECTION MARKETING / KEUNGGULAN (VALUE PROPOSITION) -->
@@ -94,24 +143,115 @@
         </div>
       </section>
 
+      <!-- BANNER PROMO / MARKETING HOOK -->
+      <div
+        style="
+          background: linear-gradient(135deg, #166534, #22c55e);
+          color: #fff;
+          padding: 15px;
+          border-radius: 10px;
+          text-align: center;
+          margin-bottom: 20px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        "
+      >
+        <h4 style="margin: 0 0 5px 0; font-size: 18px">
+          🔥 Solusi Cepat & Bersih!
+        </h4>
+        <p style="margin: 0; font-size: 14px; font-weight: 500">
+          Hanya mulai dari <strong>349K-an</strong>, halaman proyek/rumah
+          langsung bersih tuntas dari puing & sampah! <br /><em
+            >✨ Terima juga jasa pengurugan tanah profesional.</em
+          >
+        </p>
+      </div>
+      <!-- SECTION KONTAK / PEMESANAN -->
       <section id="kontak" class="fade-in">
         <h3>Pesan Jasa Sekarang</h3>
+
+        <!-- 1. Pilih Layanan -->
         <label>Pilih Layanan</label>
-        <select id="pilihanLayanan" title="Pilih Layanan">
-          <option value="Angkut Puing">Angkut Puing</option>
-          <option value="Kirim Pasir">Kirim Pasir</option>
+        <select id="pilihanLayanan" class="input-form" title="Pilih Layanan">
+          <option value="Angkut Puing">Puing</option>
+          <option value="Kirim Pasir">Tanah campur</option>
           <option value="Sampah Proyek">Sampah Proyek</option>
+          <option value="Tanah">Tanah Merah</option>
         </select>
 
-        <label>Lokasi / Kecamatan</label>
+        <!-- 2. Pilih Wilayah Besar -->
+        <label>Wilayah Utama</label>
+        <select
+          id="pilihanWilayah"
+          class="input-form"
+          onchange="cekWilayahLainnya()"
+          title="Pilih Wilayah Utama"
+        >
+          <option value="" disabled selected>-- Pilih Wilayah --</option>
+          <option value="Jakarta Selatan">Jakarta Selatan</option>
+          <option value="Jakarta Timur">Jakarta Timur</option>
+          <option value="Bekasi">Bekasi</option>
+          <option value="Lainnya">Wilayah Lainnya (Ketik Manual)</option>
+        </select>
+
+        <!-- Input Manual jika Wilayah Lainnya dipilih -->
         <input
           type="text"
-          id="inputLokasi"
-          placeholder="Contoh: Kebayoran Baru, Jakarta Selatan"
+          id="inputWilayahManual"
+          placeholder="Ketik nama wilayah Anda..."
+          style="display: none; margin-top: 8px"
+          class="input-form"
         />
-        <small id="infoLokasi"></small>
 
-        <button id="btnKirim">Kirim Ke WhatsApp</button>
+        <!-- 3. Cari & Pilih Kecamatan (Auto-suggest) -->
+        <label>Cari Kecamatan / Lokasi Spesifik</label>
+        <div style="position: relative">
+          <input
+            type="text"
+            id="inputKecamatan"
+            placeholder="Cari Kecamatan Anda"
+            class="input-form"
+            autocomplete="off"
+          />
+          <!-- Kotak Dropdown Hasil Rekomendasi -->
+          <div
+            id="hasilPencarian"
+            style="
+              position: absolute;
+              top: 100%;
+              left: 0;
+              right: 0;
+              background: #0b0f19;
+              border: 1px solid #1e293b;
+              border-radius: 0 0 8px 8px;
+              max-height: 150px;
+              overflow-y: auto;
+              z-index: 99;
+              display: none;
+            "
+          ></div>
+        </div>
+
+        <small
+          id="infoLokasi"
+          style="color: #94a3b8; display: block; margin: 8px 0 15px 0"
+        ></small>
+
+        <button
+          id="btnKirim"
+          class="btn-wa"
+          style="
+            width: 100%;
+            background-color: #22c55e;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+          "
+        >
+          Kirim Ke WhatsApp
+        </button>
       </section>
 
       <!-- SECTION FAQ PROFESIONAL & MARKETING-FRIENDLY -->
@@ -177,12 +317,40 @@
       </section>
     </main>
 
-    <footer class="fade-in">
-      <div class="footer-content">
-        <p>📞 Telp/WhatsApp: <strong>0815-7304-4356</strong></p>
-        <p>✉️ Email: <strong>jasa.angkutpuing20@gmail.com</strong></p>
-        <p>📸 Instagram: <strong>@jasa_angkut.jakarta</strong></p>
-        <p class="copy">
+    <!-- FOOTER PROFESIONAL BARU -->
+    <footer class="fade-in site-footer">
+      <div class="footer-grid">
+        <!-- Kolom 1: Kontak & Layanan -->
+        <div class="footer-col">
+          <h4>Hubungi Kami</h4>
+          <p>
+            📞 Telp/WhatsApp:
+            <a href="https://wa.me/6281573044356" target="_blank"
+              >0815-7304-4356</a
+            >
+          </p>
+          <p>📧 Email: jasa.angkutpuing20@gmail.com</p>
+        </div>
+
+        <!-- Kolom 2: Alamat Pool & Sosial Media -->
+        <div class="footer-col">
+          <h4>Pool Armada & Sosmed</h4>
+          <p>
+            🏠 <strong>Alamat Pool:</strong> Jln pancawarga 08, rt 012 RW 004,
+            Kel Cipinang besar Selatan, Kec Jatinegara, Jakarta Timur
+          </p>
+          <p>
+            📸 Instagram:
+            <a href="https://instagram.com/jasa_angkut.jakarta" target="_blank"
+              >@jasa_angkut.jakarta</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <!-- Garis Bawah & Hak Cipta -->
+      <div class="footer-bottom">
+        <p>
           &copy; 2026 Jasa Angkut Puing & Sampah Proyek. All rights reserved.
         </p>
       </div>

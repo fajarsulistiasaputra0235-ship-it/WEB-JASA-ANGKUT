@@ -106,7 +106,6 @@ const inputKecamatan = document.getElementById("inputKecamatan");
 const hasilPencarian = document.getElementById("hasilPencarian");
 const infoLokasi = document.getElementById("infoLokasi");
 
-// Fungsi Atur Tampil Input Wilayah Manual
 function cekWilayahLainnya() {
   if (pilihanWilayah && inputWilayahManual) {
     if (pilihanWilayah.value === "Lainnya") {
@@ -119,7 +118,6 @@ function cekWilayahLainnya() {
   }
 }
 
-// Logika Pencarian Kecamatan Real-Time
 if (inputKecamatan && hasilPencarian && infoLokasi && pilihanWilayah) {
   inputKecamatan.addEventListener("input", function () {
     const keyword = this.value.toLowerCase().trim();
@@ -173,7 +171,6 @@ if (inputKecamatan && hasilPencarian && infoLokasi && pilihanWilayah) {
     infoLokasi.innerText = `📍 Lokasi tujuan: ${this.value} (Bisa ketik manual jika tidak ada di list)`;
   });
 
-  // Tutup dropdown hasil pencarian jika klik di luar
   window.addEventListener("click", function (e) {
     if (
       !inputKecamatan.contains(e.target) &&
@@ -215,7 +212,7 @@ if (btnKirim) {
   });
 }
 
-// --- 7. LOGIKA GALERI LIGHTBOX (MODAL) ---
+// --- 7. LOGIKA GALERI LIGHTBOX ---
 const modal = document.getElementById("modalLightbox");
 const gambarMembesar = document.getElementById("gambarMembesar");
 const fotoGaleri = document.querySelectorAll(".foto-galeri");

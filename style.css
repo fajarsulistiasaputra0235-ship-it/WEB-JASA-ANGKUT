@@ -416,3 +416,46 @@ header h1 {
   font-size: 13px;
   color: var(--text-muted);
 }
+
+/* --- STYLING HEADER & BRAND LOGO --- */
+.site-header {
+  text-align: center;
+  padding: 20px 0 10px 0;
+  margin-bottom: 10px;
+}
+
+.logo-container {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: translateY(-2px);
+  border-color: rgba(
+    250,
+    204,
+    21,
+    0.4
+  ); /* Efek kilau tipis warna kuning truk */
+}
+
+.brand-logo {
+  max-width: 240px; /* Ukuran pas di HP dan Desktop */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .brand-logo {
+    max-width: 190px;
+  }
+}

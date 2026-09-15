@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- PRELOADER -->
+    <!-- 1. PRELOADER -->
     <div id="preloader">
       <div class="spinner"></div>
     </div>
 
-    <!-- HEADER NAVBAR MODERN GLASSMORPHISM -->
+    <!-- 2. HEADER NAVBAR -->
     <header class="fade-in site-header">
       <div class="nav-brand">
         <img src="img/logo.png" alt="TransPuing Jakarta" class="brand-logo" />
@@ -39,7 +39,7 @@
     </header>
 
     <main>
-      <!-- HERO SECTION PROFESIONAL -->
+      <!-- 3. HERO SECTION -->
       <section id="hero" class="fade-in">
         <div class="hero-badge">
           ⭐ JASA ANGKUT RESMI & TERPERCAYA DI JAKARTA
@@ -60,7 +60,7 @@
         <button id="btnScrollToForm">Mulai Hitung Estimasi & Pesan</button>
       </section>
 
-      <!-- SECTION 4 KARTU LAYANAN INTERAKTIF -->
+      <!-- 4. KARTU LAYANAN -->
       <section id="layanan" class="fade-in">
         <div class="card-layanan">
           <div class="icon-layanan">🧱</div>
@@ -100,28 +100,24 @@
         </div>
       </section>
 
-      <!-- SECTION GALERI -->
+      <!-- 5. GALERI -->
       <section id="galeri" class="fade-in">
         <h3>Galeri Armada & Kerja</h3>
 
         <div class="grid-galeri">
-          <!-- 3 Foto Utama -->
           <div class="item-galeri">
             <img src="img/armada.jpeg" alt="ARMADA" class="foto-galeri" />
             <p class="teks-galeri">ARMADA</p>
           </div>
-
           <div class="item-galeri">
             <img src="img/before.jpeg" alt="BEFORE" class="foto-galeri" />
             <p class="teks-galeri">BEFORE</p>
           </div>
-
           <div class="item-galeri">
             <img src="img/after.jpeg" alt="AFTER" class="foto-galeri" />
             <p class="teks-galeri">AFTER</p>
           </div>
 
-          <!-- Foto Tambahan -->
           <div class="item-galeri galeri-hidden" style="display: none">
             <img src="img/pool.jpeg" alt="Pool Armada" class="foto-galeri" />
             <p class="teks-galeri">Pool & Garasi Truk</p>
@@ -144,29 +140,14 @@
           </div>
         </div>
 
-        <!-- Tombol See More -->
         <div style="text-align: center; margin-top: 25px">
-          <button
-            id="btn-see-more"
-            onclick="toggleGaleri()"
-            style="
-              background-color: #22c55e;
-              color: #fff;
-              border: none;
-              padding: 10px 24px;
-              border-radius: 6px;
-              font-weight: bold;
-              cursor: pointer;
-              font-size: 14px;
-              transition: background 0.3s;
-            "
-          >
+          <button id="btn-see-more" onclick="toggleGaleri()">
             See More Photos
           </button>
         </div>
       </section>
 
-      <!-- SECTION KEUNGGULAN -->
+      <!-- 6. KEUNGGULAN -->
       <section id="keunggulan" class="fade-in">
         <h3>Kenapa Harus Memilih Jasa Kami?</h3>
         <div class="grid-keunggulan">
@@ -174,63 +155,40 @@
             <div class="ikon-unggul">🤝</div>
             <h4>Tanpa Perantara</h4>
             <p>
-              Armada dikemudikan langsung oleh pemilik. Harga dijamin lebih
-              murah dan negosiasi langsung tanpa calo.
+              Armada dikemudikan langsung oleh pemilik tanpa perantara/calo.
             </p>
           </div>
           <div class="card-keunggulan">
             <div class="ikon-unggul">⚡</div>
             <h4>Respon Cepat Tanggap</h4>
-            <p>
-              Pesan hari ini, armada langsung siap meluncur ke lokasi proyek
-              Anda di wilayah Jakarta.
-            </p>
+            <p>Pesan hari ini, armada siap meluncur ke lokasi proyek Anda.</p>
           </div>
           <div class="card-keunggulan">
             <div class="ikon-unggul">✨</div>
             <h4>Hasil Kerja Bersih & Tuntas</h4>
-            <p>
-              Kami tidak cuma mengangkut, tapi memastikan lokasi proyek atau
-              halaman rumah Anda kembali bersih.
-            </p>
+            <p>Memastikan lokasi proyek atau halaman rumah kembali bersih.</p>
           </div>
         </div>
       </section>
 
-      <!-- BANNER PROMO -->
-      <div
-        style="
-          background: linear-gradient(135deg, #166534, #22c55e);
-          color: #fff;
-          padding: 15px;
-          border-radius: 10px;
-          text-align: center;
-          margin-bottom: 20px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        "
-      >
-        <h4 style="margin: 0 0 5px 0; font-size: 18px">
-          🔥 Solusi Cepat & Bersih!
-        </h4>
-        <p style="margin: 0; font-size: 14px; font-weight: 500">
+      <!-- 7. BANNER PROMO -->
+      <div class="banner-promo">
+        <h4>🔥 Solusi Cepat & Bersih!</h4>
+        <p>
           Hanya mulai dari <strong>349K-an</strong>, halaman proyek/rumah
           langsung bersih tuntas dari puing & sampah! <br />
           <em>✨ Terima juga jasa pengurugan tanah profesional.</em>
         </p>
       </div>
 
-      <!-- SECTION KALKULATOR ESTIMASI -->
+      <!-- 8. KALKULATOR ESTIMASI -->
       <section id="kalkulator" class="fade-in kalkulator-section">
         <div class="kalkulator-header">
           <h3>Kalkulator Estimasi Biaya & Kapasitas</h3>
-          <p>
-            Kalkulasi cepat perkiraan biaya operasional Dump Truck Mitsubishi
-            Colt Diesel Roda 6 untuk proyek Anda.
-          </p>
+          <p>Kalkulasi cepat perkiraan biaya operasional Dump Truck Roda 6.</p>
         </div>
 
         <div class="kalkulator-wrapper">
-          <!-- Sisi Kiri: Tombol Pilihan Rit (Pill Buttons) -->
           <div class="kalkulator-control">
             <label>Pilih Jumlah Ritase / Volume</label>
             <div class="rit-buttons-group">
@@ -260,18 +218,14 @@
             </p>
           </div>
 
-          <!-- Sisi Kiri: Output Hasil (Bisa berubah jadi link WA jika Custom) -->
           <div class="kalkulator-result-card" id="cardResult">
             <div class="result-glow"></div>
             <span class="result-label" id="labelResultTitle"
               >Estimasi Total Biaya</span
             >
-
-            <!-- Elemen Teks Harga / Tombol Hubungi Kami -->
             <div id="containerOutput">
-              <h2 id="hasilEstimasi">Rp 350.000</h2>
+              <h2 id="hasilEstimasi">Rp 349.000</h2>
             </div>
-
             <div class="result-divider"></div>
             <p id="infoKapasitas">
               🚚 <strong>Kapasitas:</strong> 4 Kubik (1 Rit - Termasuk Truk &
@@ -281,7 +235,7 @@
         </div>
       </section>
 
-      <!-- SECTION KONTAK -->
+      <!-- 9. FORM KONTAK & WILAYAH -->
       <section id="kontak" class="fade-in">
         <h3>Pesan Jasa Sekarang</h3>
 
@@ -314,48 +268,15 @@
             class="input-form"
             autocomplete="off"
           />
-          <div
-            id="hasilPencarian"
-            style="
-              position: absolute;
-              top: 100%;
-              left: 0;
-              right: 0;
-              background: #0b0f19;
-              border: 1px solid #1e293b;
-              border-radius: 0 0 8px 8px;
-              max-height: 150px;
-              overflow-y: auto;
-              z-index: 99;
-              display: none;
-            "
-          ></div>
+          <div id="hasilPencarian"></div>
         </div>
 
-        <small
-          id="infoLokasi"
-          style="color: #94a3b8; display: block; margin: 8px 0 15px 0"
-        ></small>
+        <small id="infoLokasi"></small>
 
-        <button
-          id="btnKirim"
-          class="btn-wa"
-          style="
-            width: 100%;
-            background-color: #22c55e;
-            color: #fff;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-          "
-        >
-          Kirim Ke WhatsApp
-        </button>
+        <button id="btnKirim" class="btn-wa">Kirim Ke WhatsApp</button>
       </section>
 
-      <!-- SECTION FAQ -->
+      <!-- 10. FAQ SECTION -->
       <section id="faq" class="fade-in">
         <h3>Pertanyaan Sering Diajukan (FAQ)</h3>
         <div class="faq-item">
@@ -365,9 +286,8 @@
           </button>
           <div class="faq-jawab">
             <p>
-              Tentu bisa diatur fleksibel sesuai kebutuhan Kakak! Kami siap
-              sediakan tenaga tambahan (kuli muat) jika diperlukan, atau cukup
-              sewa armadanya saja.
+              Tentu bisa diatur fleksibel! Kami sediakan tenaga kuli muat di
+              lokasi.
             </p>
           </div>
         </div>
@@ -378,21 +298,17 @@
           </button>
           <div class="faq-jawab">
             <p>
-              Jam operasional resmi kami pukul 07.00 - 18.00 WIB. Namun untuk
-              kebutuhan mendadak, silakan hubungi kami via WhatsApp.
+              Jam operasional 07.00 - 18.00 WIB. Untuk mendadak, hubungi via
+              WhatsApp.
             </p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-tanya">
-            Wilayah mana saja yang di-cover oleh layanan ini?
-            <span class="icon">+</span>
+            Wilayah mana saja yang di-cover? <span class="icon">+</span>
           </button>
           <div class="faq-jawab">
-            <p>
-              Kami melayani wilayah Jakarta Selatan, Jakarta Timur, dan Bekasi
-              tanpa perantara.
-            </p>
+            <p>Jakarta Selatan, Jakarta Timur, dan Bekasi tanpa perantara.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -400,54 +316,43 @@
             Bagaimana sistem pembayaran jasanya? <span class="icon">+</span>
           </button>
           <div class="faq-jawab">
+            <p>Aman dan fleksibel, diselesaikan setelah muatan diangkut.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-tanya">
+            Bagaimana jika lokasi proyek berada di dalam gang sempit?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-jawab">
             <p>
-              Sistem pembayaran aman dan fleksibel, bisa diselesaikan setelah
-              muatan diangkut atau sesuai kesepakatan.
+              Kami diskusikan dulu via WhatsApp mengenai lebar akses jalannya.
             </p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-tanya">
-            Bagaimana jika lokasi proyek saya berada di dalam gang sempit?
+            Apakah ada biaya tambahan jika jarak pembuangan jauh?
             <span class="icon">+</span>
           </button>
           <div class="faq-jawab">
             <p>
-              Tenang saja! Karena armada kami menggunakan Dump Truck Mitsubishi
-              Colt Diesel Roda 6, kami akan diskusikan dulu via WhatsApp
-              mengenai lebar akses jalannya agar armada bisa masuk dengan aman.
+              Kami informasikan secara transparan di awal sebelum armada
+              meluncur.
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-tanya">
-            Apakah ada biaya tambahan jika jarak lokasi pembuangan jauh?
-            <span class="icon">+</span>
+            Apakah harus menyediakan karung sendiri? <span class="icon">+</span>
           </button>
           <div class="faq-jawab">
             <p>
-              Harga standar Rp350.000/rit berlaku untuk wilayah umum. Jika jarak
-              titik muat dan buang cukup jauh, kami akan informasikan secara
-              transparan di awal sebelum armada meluncur.
+              Fleksibel! Bisa berserakan (kuli kami yang muat) atau sudah
+              dikarungi.
             </p>
           </div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-tanya">
-            Apakah saya harus menyediakan karung sendiri untuk puingnya?
-            <span class="icon">+</span>
-          </button>
-          <div class="faq-jawab">
-            <p>
-              Fleksibel! Puing bisa dibiarkan berserakan (tim kuli kami yang
-              bantu muat) atau sudah dikarungi terlebih dahulu, silakan
-              sesuaikan dengan kebutuhan Anda.
-            </p>
-          </div>
-        </div>
-
         <div class="faq-item">
           <button class="faq-tanya">
             Apa saja jenis muatan yang dapat diangkut?
@@ -455,37 +360,31 @@
           </button>
           <div class="faq-jawab">
             <p>
-              Kami fokus melayani pengangkutan puing sisa bangunan, sampah
-              proyek, serta pengiriman tanah merah atau tanah campur secara
-              profesional.
+              Puing sisa bangunan, sampah proyek, serta pengiriman tanah urugan.
             </p>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- FOOTER PROFESIONAL -->
+    <!-- 11. FOOTER -->
     <footer class="fade-in site-footer">
       <div class="footer-grid">
         <div class="footer-col">
           <h4>Hubungi Kami</h4>
           <p>
             📞 Telp/WhatsApp:
-            <a
-              href="https://wa.me/6281573044356?text=Hi%2C%20Saya%20mau%20pesan%20jasa%20JayTrans%20Puing%20Jakarta%2C%20Apakah%20Armada%20Tersedia%3F"
-              target="_blank"
-              rel="noopener"
+            <a href="https://wa.me/6281573044356" target="_blank" rel="noopener"
+              >0815-7304-4356</a
             >
-              0815-7304-4356
-            </a>
           </p>
           <p>📧 Email: jasa.angkutpuing20@gmail.com</p>
         </div>
         <div class="footer-col">
           <h4>Pool Armada & Sosmed</h4>
           <p>
-            🏠 <strong>Alamat Pool:</strong> Jln Pancawarga 08, RT 012/RW 004,
-            Kel. Cipinang Besar Selatan, Kec. Jatinegara, Jakarta Timur
+            🏠 <strong>Alamat Pool:</strong> Jln Pancawarga 08, Jatinegara,
+            Jaktim
           </p>
           <p>
             📸 Instagram:
@@ -505,9 +404,9 @@
       </div>
     </footer>
 
-    <!-- FLOATING WA BUTTON DENGAN LOGO RESMI & TEMPLAT PESAN -->
+    <!-- FLOATING WA BUTTON -->
     <a
-      href="https://wa.me/6281573044356?text=Hi%2C%20Saya%20mau%20pesan%20jasa%20JayTrans%20Puing%20Jakarta%2C%20Apakah%20Armada%20Tersedia%3F"
+      href="https://wa.me/6281573044356"
       class="floating-wa"
       target="_blank"
       rel="noopener"
@@ -525,6 +424,7 @@
       </svg>
     </a>
 
+    <!-- LIGHTBOX MODAL -->
     <div id="modalLightbox" class="modal">
       <span class="close-modal">&times;</span>
       <img

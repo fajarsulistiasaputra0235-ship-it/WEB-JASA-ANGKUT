@@ -1,4 +1,4 @@
-// --- 1. LOGIKA PRELOADER ---
+// --- 1. PRELOADER ---
 window.addEventListener("load", function () {
   const preloader = document.getElementById("preloader");
   if (preloader) {
@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
   }
 });
 
-// --- 2. LOGIKA ANIMASI SCROLL (Fade-In) ---
+// --- 2. ANIMASI SCROLL (Fade-In) ---
 const faders = document.querySelectorAll(".fade-in");
 const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
 
@@ -26,7 +26,7 @@ faders.forEach((fader) => {
   appearOnScroll.observe(fader);
 });
 
-// --- 3. LOGIKA TOMBOL SCROLL KE FORM ---
+// --- 3. TOMBOL SCROLL KE FORM ---
 const btnScrollToForm = document.getElementById("btnScrollToForm");
 const sectionKontak = document.getElementById("kontak");
 if (btnScrollToForm && sectionKontak) {
@@ -35,7 +35,7 @@ if (btnScrollToForm && sectionKontak) {
   });
 }
 
-// --- 4. LOGIKA KARTU LAYANAN INTERAKTIF (4 PILIHAN & AUTO-CUSTOM PINDAHAN) ---
+// --- 4. KARTU LAYANAN INTERAKTIF & AUTO-CUSTOM PINDAHAN ---
 const kotakLayanan = document.querySelectorAll(".card-layanan");
 const pilihanLayanan = document.getElementById("pilihanLayanan");
 
@@ -50,7 +50,6 @@ kotakLayanan.forEach(function (kotak) {
       pilihRit(1, document.querySelector(".btn-rit"));
     } else if (judul.includes("Pindahan")) {
       pilihanLayanan.value = "Pindahan Rumah";
-      // Pindahan otomatis lari ke mode Custom/Nego karena jarak & volume fleksibel
       const tombolCustom = document.querySelector(".btn-rit:nth-child(4)");
       if (tombolCustom) pilihRit("custom", tombolCustom);
     } else {
@@ -73,7 +72,82 @@ if (pilihanLayanan) {
   });
 }
 
-// --- 5. DATABASE KECAMATAN & LOGIKA DROPDOWN OTOMATIS & FILTER ---
+// --- 5. GALERI LIGHTBOX ---
+const modal = document.getElementById("modalLightbox");
+const gambarMembesar = document.getElementById("gambarMembesar");
+const fotoGaleri = document.querySelectorAll(".foto-galeri");
+const closeModal = document.querySelector(".close-modal");
+
+fotoGaleri.forEach((foto) => {
+  foto.addEventListener("click", function () {
+    if (modal && gambarMembesar) {
+      modal.style.display = "block";
+      gambarMembesar.src = this.src;
+    }
+  });
+});
+
+if (closeModal && modal) {
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+
+// --- 6. KALKULATOR ESTIMASI & PILIHAN RIT ---
+let ritAktif = 1;
+
+function pilihRit(nilai, elemenTombol) {
+  ritAktif = nilai;
+
+  const semuaTombol = document.querySelectorAll(".btn-rit");
+  semuaTombol.forEach((btn) => btn.classList.remove("aktif"));
+  if (elemenTombol) elemenTombol.classList.add("aktif");
+
+  const containerOutput = document.getElementById("containerOutput");
+  const infoKapasitas = document.getElementById("infoKapasitas");
+  const cardResult = document.getElementById("cardResult");
+  const labelResultTitle = document.getElementById("labelResultTitle");
+
+  const HARGA_PER_RIT = 349000;
+
+  if (nilai === "custom") {
+    if (labelResultTitle)
+      labelResultTitle.innerText = "Butuh Penawaran Khusus?";
+    if (cardResult) cardResult.classList.add("clickable");
+
+    if (containerOutput) {
+      containerOutput.innerHTML = `
+        <a href="#" onclick="kirimWaCustom(event)" class="link-hubungi-custom">
+          <h2>Hubungi Kami</h2>
+        </a>
+      `;
+    }
+    if (infoKapasitas)
+      infoKapasitas.innerHTML = `🤝 <strong>Muatan Banyak / Khusus / Pindahan:</strong> Dump Truck Colt Diesel Roda 6 siap meluncur. Klik di sini untuk nego via WhatsApp.`;
+  } else {
+    if (cardResult) cardResult.classList.remove("clickable");
+    if (labelResultTitle) labelResultTitle.innerText = "Estimasi Total Biaya";
+
+    const jumlah = parseInt(nilai);
+    const totalHarga = jumlah * HARGA_PER_RIT;
+    const totalKapasitas = jumlah * 4;
+
+    if (containerOutput) {
+      containerOutput.innerHTML = `
+        <h2 id="hasilEstimasi">Rp ${totalHarga.toLocaleString("id-ID")}</h2>
+      `;
+    }
+    if (infoKapasitas)
+      infoKapasitas.innerHTML = `🚛 <strong>Kapasitas:</strong> ${totalKapasitas} Kubik (${jumlah} Rit) - Dump Truck Colt Diesel Roda 6 (Termasuk Truk & Kuli)`;
+  }
+}
+
+// --- 7. DATABASE KECAMATAN & VALIDASI WILAYAH (STRICT) ---
 const databaseKecamatan = {
   "Jakarta Selatan": [
     "Pancoran",
@@ -203,56 +277,6 @@ if (inputKecamatan && hasilPencarian && infoLokasi && pilihanWilayah) {
   });
 }
 
-// --- 6. LOGIKA KALKULATOR RITASE & TOMBOL INTERAKTIF ---
-let ritAktif = 1;
-
-function pilihRit(nilai, elemenTombol) {
-  ritAktif = nilai;
-
-  const semuaTombol = document.querySelectorAll(".btn-rit");
-  semuaTombol.forEach((btn) => btn.classList.remove("aktif"));
-  if (elemenTombol) elemenTombol.classList.add("aktif");
-
-  const containerOutput = document.getElementById("containerOutput");
-  const infoKapasitas = document.getElementById("infoKapasitas");
-  const cardResult = document.getElementById("cardResult");
-  const labelResultTitle = document.getElementById("labelResultTitle");
-
-  const HARGA_PER_RIT = 349000;
-
-  if (nilai === "custom") {
-    if (labelResultTitle)
-      labelResultTitle.innerText = "Butuh Penawaran Khusus?";
-    if (cardResult) cardResult.classList.add("clickable");
-
-    if (containerOutput) {
-      containerOutput.innerHTML = `
-        <a href="#" onclick="kirimWaCustom(event)" class="link-hubungi-custom">
-          <h2>Hubungi Kami</h2>
-        </a>
-      `;
-    }
-    if (infoKapasitas)
-      infoKapasitas.innerHTML = `🤝 <strong>Muatan Banyak / Khusus / Pindahan:</strong> Dump Truck Colt Diesel Roda 6 siap meluncur. Klik di sini untuk nego via WhatsApp.`;
-  } else {
-    if (cardResult) cardResult.classList.remove("clickable");
-    if (labelResultTitle) labelResultTitle.innerText = "Estimasi Total Biaya";
-
-    const jumlah = parseInt(nilai);
-    const totalHarga = jumlah * HARGA_PER_RIT;
-    const totalKapasitas = jumlah * 4;
-
-    if (containerOutput) {
-      containerOutput.innerHTML = `
-        <h2 id="hasilEstimasi">Rp ${totalHarga.toLocaleString("id-ID")}</h2>
-      `;
-    }
-    if (infoKapasitas)
-      infoKapasitas.innerHTML = `🚛 <strong>Kapasitas:</strong> ${totalKapasitas} Kubik (${jumlah} Rit) - Dump Truck Colt Diesel Roda 6 (Termasuk Truk & Kuli)`;
-  }
-}
-
-// --- 7. FUNGSI VALIDASI STRICT (MURNI 3 WILAYAH UTAMA & DATABASE KECAMATAN) ---
 function validasiDanAmbilLokasi() {
   const wilayahVal = pilihanWilayah ? pilihanWilayah.value : "";
   const kecamatanVal = inputKecamatan ? inputKecamatan.value.trim() : "";
@@ -298,7 +322,7 @@ function validasiDanAmbilLokasi() {
   return `${kecamatanVal}, ${wilayahVal}`;
 }
 
-// --- 8. KIRIM WA CUSTOM ---
+// --- 8. KIRIM KE WHATSAPP (FORM & CUSTOM) ---
 function kirimWaCustom(e) {
   e.preventDefault();
   const lokasiLengkap = validasiDanAmbilLokasi();
@@ -306,7 +330,6 @@ function kirimWaCustom(e) {
 
   const layanan = pilihanLayanan ? pilihanLayanan.value : "Angkut Puing";
   const nomorWa = "6281573044356";
-
   let pesan = `Halo JayTrans, saya mau order jasa *${layanan}* dengan muatan *Custom / Banyak* untuk lokasi tujuan di *${lokasiLengkap}*. Mohon info harga dan ketersediaan armada.`;
 
   if (layanan === "Pindahan Rumah") {
@@ -317,7 +340,6 @@ function kirimWaCustom(e) {
   window.open(urlWa, "_blank");
 }
 
-// --- 9. LOGIKA KIRIM KE WHATSAPP DARI FORM BAWAH ---
 const btnKirim = document.getElementById("btnKirim");
 if (btnKirim) {
   btnKirim.addEventListener("click", function () {
@@ -342,33 +364,7 @@ if (btnKirim) {
   });
 }
 
-// --- 10. LOGIKA GALERI LIGHTBOX ---
-const modal = document.getElementById("modalLightbox");
-const gambarMembesar = document.getElementById("gambarMembesar");
-const fotoGaleri = document.querySelectorAll(".foto-galeri");
-const closeModal = document.querySelector(".close-modal");
-
-fotoGaleri.forEach((foto) => {
-  foto.addEventListener("click", function () {
-    if (modal && gambarMembesar) {
-      modal.style.display = "block";
-      gambarMembesar.src = this.src;
-    }
-  });
-});
-
-if (closeModal && modal) {
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-}
-
-// --- 11. LOGIKA FAQ ACCORDION ---
+// --- 9. FAQ ACCORDION ---
 const faqTanya = document.querySelectorAll(".faq-tanya");
 faqTanya.forEach((tanya) => {
   tanya.addEventListener("click", function () {
@@ -379,7 +375,7 @@ faqTanya.forEach((tanya) => {
   });
 });
 
-// --- 12. LOGIKA TOMBOL SEE MORE GALERI ---
+// --- 10. TOMBOL SEE MORE GALERI ---
 function toggleGaleri() {
   const itemsHidden = document.querySelectorAll(".galeri-hidden");
   const btnSeeMore = document.getElementById("btn-see-more");

@@ -39,20 +39,65 @@
     </header>
 
     <main>
+      <!-- HERO SECTION PROFESIONAL -->
       <section id="hero" class="fade-in">
-        <h2>Jasa Buang Dan Kirim Puing/Tanah Jakarta</h2>
+        <div class="hero-badge">
+          ⭐ JASA ANGKUT RESMI & TERPERCAYA DI JAKARTA
+        </div>
+        <h2>Solusi Bersih & Cepat Angkut Puing & Kirim Tanah Jakarta</h2>
         <p>
-          Melayani jasa Buang Dan Kirim Puing/Tanah dan pembersihan sampah
-          proyek di wilayah Jakarta. Armada dikemudikan langsung oleh pemilik
-          tanpa perantara, menjamin harga bersahabat dan layanan cepat tanggap.
+          Layanan spesialis pengangkutan puing renovasi bangunan, pembersihan
+          sampah proyek, serta pengiriman tanah urugan profesional di wilayah
+          <strong>Jakarta Selatan, Jakarta Timur, dan Bekasi</strong>.
+          <br /><br />
+          🚛
+          <em
+            >Armada Dump Truck Mitsubishi Colt Diesel Roda 6 dikemudikan
+            langsung oleh pemilik. Jaminan harga termurah tanpa calo,
+            transparan, dan bergaransi bersih tuntas!</em
+          >
         </p>
-        <button id="btnScrollToForm">Pesan Sekarang</button>
+        <button id="btnScrollToForm">Mulai Hitung Estimasi & Pesan</button>
       </section>
 
+      <!-- SECTION 4 KARTU LAYANAN INTERAKTIF -->
       <section id="layanan" class="fade-in">
-        <div class="card-layanan">Puing</div>
-        <div class="card-layanan">Sampah Proyek</div>
-        <div class="card-layanan">Tanah</div>
+        <div class="card-layanan">
+          <div class="icon-layanan">🧱</div>
+          <h4>Angkut Puing Renovasi</h4>
+          <p>
+            Spesialis sisa bongkaran dinding, keramik, beton, dan renovasi
+            rumah/gedung.
+          </p>
+          <span class="card-action">Pilih Layanan &rarr;</span>
+        </div>
+        <div class="card-layanan">
+          <div class="icon-layanan">🏗️</div>
+          <h4>Sampah Sisa Proyek</h4>
+          <p>
+            Pembersihan tumpukan material sisa pembangunan agar lokasi kembali
+            bersih.
+          </p>
+          <span class="card-action">Pilih Layanan &rarr;</span>
+        </div>
+        <div class="card-layanan">
+          <div class="icon-layanan">🌍</div>
+          <h4>Kirim Tanah Urugan</h4>
+          <p>
+            Pengiriman tanah merah atau tanah campur berkualitas untuk
+            pengurugan lahan.
+          </p>
+          <span class="card-action">Pilih Layanan &rarr;</span>
+        </div>
+        <div class="card-layanan">
+          <div class="icon-layanan">📦</div>
+          <h4>Pindahan Rumah / Kantor</h4>
+          <p>
+            Jasa angkut perabot rumah tangga, kasur, lemari, sofa, dan pindahan
+            gudang.
+          </p>
+          <span class="card-action">Pilih Layanan &rarr;</span>
+        </div>
       </section>
 
       <!-- SECTION GALERI -->
@@ -174,39 +219,91 @@
         </p>
       </div>
 
+      <!-- SECTION KALKULATOR ESTIMASI -->
+      <section id="kalkulator" class="fade-in kalkulator-section">
+        <div class="kalkulator-header">
+          <h3>Kalkulator Estimasi Biaya & Kapasitas</h3>
+          <p>
+            Kalkulasi cepat perkiraan biaya operasional Dump Truck Mitsubishi
+            Colt Diesel Roda 6 untuk proyek Anda.
+          </p>
+        </div>
+
+        <div class="kalkulator-wrapper">
+          <!-- Sisi Kiri: Tombol Pilihan Rit (Pill Buttons) -->
+          <div class="kalkulator-control">
+            <label>Pilih Jumlah Ritase / Volume</label>
+            <div class="rit-buttons-group">
+              <button
+                type="button"
+                class="btn-rit aktif"
+                onclick="pilihRit(1, this)"
+              >
+                1 Rit (4 Kubik)
+              </button>
+              <button type="button" class="btn-rit" onclick="pilihRit(2, this)">
+                2 Rit (8 Kubik)
+              </button>
+              <button type="button" class="btn-rit" onclick="pilihRit(3, this)">
+                3 Rit (12 Kubik)
+              </button>
+              <button
+                type="button"
+                class="btn-rit"
+                onclick="pilihRit('custom', this)"
+              >
+                Custom / Banyak
+              </button>
+            </div>
+            <p class="kalkulator-hint">
+              ✨ Harga sudah termasuk Driver dan tenaga kuli muat di lokasi.
+            </p>
+          </div>
+
+          <!-- Sisi Kiri: Output Hasil (Bisa berubah jadi link WA jika Custom) -->
+          <div class="kalkulator-result-card" id="cardResult">
+            <div class="result-glow"></div>
+            <span class="result-label" id="labelResultTitle"
+              >Estimasi Total Biaya</span
+            >
+
+            <!-- Elemen Teks Harga / Tombol Hubungi Kami -->
+            <div id="containerOutput">
+              <h2 id="hasilEstimasi">Rp 350.000</h2>
+            </div>
+
+            <div class="result-divider"></div>
+            <p id="infoKapasitas">
+              🚚 <strong>Kapasitas:</strong> 4 Kubik (1 Rit - Termasuk Truk &
+              Kuli)
+            </p>
+          </div>
+        </div>
+      </section>
+
       <!-- SECTION KONTAK -->
       <section id="kontak" class="fade-in">
         <h3>Pesan Jasa Sekarang</h3>
 
         <label>Pilih Layanan</label>
         <select id="pilihanLayanan" class="input-form" title="Pilih Layanan">
-          <option value="Angkut Puing">Puing</option>
-          <option value="Kirim Pasir">Tanah campur</option>
+          <option value="Angkut Puing">Angkut Puing</option>
           <option value="Sampah Proyek">Sampah Proyek</option>
-          <option value="Tanah">Tanah Merah</option>
+          <option value="Tanah">Kirim Tanah Urugan</option>
+          <option value="Pindahan Rumah">Pindahan Rumah / Perabot</option>
         </select>
 
         <label>Wilayah Utama</label>
         <select
           id="pilihanWilayah"
           class="input-form"
-          onchange="cekWilayahLainnya()"
           title="Pilih Wilayah Utama"
         >
           <option value="" disabled selected>-- Pilih Wilayah --</option>
           <option value="Jakarta Selatan">Jakarta Selatan</option>
           <option value="Jakarta Timur">Jakarta Timur</option>
           <option value="Bekasi">Bekasi</option>
-          <option value="Lainnya">Wilayah Lainnya (Ketik Manual)</option>
         </select>
-
-        <input
-          type="text"
-          id="inputWilayahManual"
-          placeholder="Ketik nama wilayah Anda..."
-          style="display: none; margin-top: 8px"
-          class="input-form"
-        />
 
         <label>Cari Kecamatan / Lokasi Spesifik</label>
         <div style="position: relative">
@@ -306,6 +403,61 @@
             <p>
               Sistem pembayaran aman dan fleksibel, bisa diselesaikan setelah
               muatan diangkut atau sesuai kesepakatan.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-tanya">
+            Bagaimana jika lokasi proyek saya berada di dalam gang sempit?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-jawab">
+            <p>
+              Tenang saja! Karena armada kami menggunakan Dump Truck Mitsubishi
+              Colt Diesel Roda 6, kami akan diskusikan dulu via WhatsApp
+              mengenai lebar akses jalannya agar armada bisa masuk dengan aman.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-tanya">
+            Apakah ada biaya tambahan jika jarak lokasi pembuangan jauh?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-jawab">
+            <p>
+              Harga standar Rp350.000/rit berlaku untuk wilayah umum. Jika jarak
+              titik muat dan buang cukup jauh, kami akan informasikan secara
+              transparan di awal sebelum armada meluncur.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-tanya">
+            Apakah saya harus menyediakan karung sendiri untuk puingnya?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-jawab">
+            <p>
+              Fleksibel! Puing bisa dibiarkan berserakan (tim kuli kami yang
+              bantu muat) atau sudah dikarungi terlebih dahulu, silakan
+              sesuaikan dengan kebutuhan Anda.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-tanya">
+            Apa saja jenis muatan yang dapat diangkut?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-jawab">
+            <p>
+              Kami fokus melayani pengangkutan puing sisa bangunan, sampah
+              proyek, serta pengiriman tanah merah atau tanah campur secara
+              profesional.
             </p>
           </div>
         </div>

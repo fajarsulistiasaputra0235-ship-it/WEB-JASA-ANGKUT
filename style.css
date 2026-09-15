@@ -135,24 +135,26 @@ body {
   text-align: center;
   margin-bottom: 30px;
 }
+
+/* PERBAIKAN GALERI RESPONSIF MOBILE */
 .grid-galeri {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 25px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
 }
 .item-galeri {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
-  min-width: 200px;
+  width: 100%;
+  max-width: 100%;
 }
 .foto-galeri {
   width: 100%;
-  max-width: 280px;
-  height: 200px;
+  max-width: 100%;
+  height: 220px;
   object-fit: cover;
   border-radius: 12px;
   cursor: pointer;
@@ -160,7 +162,7 @@ body {
   transition: all 0.3s ease;
 }
 .foto-galeri:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   border-color: var(--primary);
 }
 .teks-galeri {
@@ -171,6 +173,22 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .grid-galeri {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .item-galeri {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+  }
+  .foto-galeri {
+    max-width: 280px;
+  }
 }
 
 .modal {
@@ -514,4 +532,302 @@ body {
   margin: 0;
   font-size: 13px;
   color: var(--text-muted);
+}
+
+/* --- STYLING KALKULATOR MODERN & INTERAKTIF --- */
+.kalkulator-section {
+  padding: 40px 30px;
+  margin-bottom: 50px;
+  background: linear-gradient(
+    145deg,
+    rgba(17, 24, 39, 0.9),
+    rgba(11, 15, 25, 0.95)
+  );
+  border: 1px solid rgba(37, 211, 102, 0.2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.kalkulator-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary);
+}
+
+.kalkulator-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.badge-kalkulator {
+  background-color: rgba(37, 211, 102, 0.15);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.kalkulator-header h3 {
+  margin: 12px 0 8px 0;
+  font-size: 24px;
+  color: #fff;
+}
+
+.kalkulator-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+.kalkulator-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .kalkulator-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kalkulator-control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kalkulator-control label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.kalkulator-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+/* --- TOMBOL PILIHAN RIT (PILL BUTTONS) --- */
+.rit-buttons-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.btn-rit {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-rit:hover {
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.btn-rit.aktif {
+  background-color: rgba(37, 211, 102, 0.15);
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.2);
+}
+
+/* --- KOTAK HASIL ESTIMASI --- */
+.kalkulator-result-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  border-radius: 14px;
+  padding: 25px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.kalkulator-result-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 10px 35px rgba(37, 211, 102, 0.2);
+}
+
+/* Mode interaktif khusus saat Custom diklik */
+.kalkulator-result-card.clickable {
+  cursor: pointer;
+  border-color: var(--primary);
+}
+
+.kalkulator-result-card.clickable:hover {
+  background: rgba(37, 211, 102, 0.05);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+}
+
+.result-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+}
+
+.kalkulator-result-card h2 {
+  margin: 10px 0;
+  color: var(--primary);
+  font-size: 32px;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
+}
+
+.link-hubungi-custom {
+  color: var(--primary);
+  text-decoration: none;
+  display: block;
+}
+
+.link-hubungi-custom h2 {
+  font-size: 28px !important;
+  margin: 10px 0 !important;
+  text-decoration: underline;
+}
+
+.result-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 15px 0;
+}
+
+.kalkulator-result-card p {
+  margin: 0;
+  font-size: 13px;
+  color: #f8fafc;
+  line-height: 1.4;
+}
+
+/* --- STYLING UPGRADE KARTU LAYANAN PROFESIONAL --- */
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(37, 211, 102, 0.15);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+}
+
+#layanan {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  #layanan {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-layanan {
+  background: linear-gradient(
+    145deg,
+    rgba(17, 24, 39, 0.8),
+    rgba(11, 15, 25, 0.9)
+  );
+  border: 1px solid var(--border-color);
+  padding: 30px 20px;
+  border-radius: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-layanan::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.card-layanan:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.15);
+}
+
+.card-layanan:hover::before {
+  background: var(--primary);
+}
+
+.icon-layanan {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.card-layanan h4 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.card-layanan p {
+  margin: 0 0 15px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.card-action {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.card-layanan:hover .card-action {
+  transform: translateX(5px);
+}
+
+#layanan {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  #layanan {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
